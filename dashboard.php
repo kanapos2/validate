@@ -113,7 +113,7 @@ if ($_FILES["file"]["type"] != "text/csv") {
 
             foreach ($data as $output){
                 echo "<tr>";
-                for ($i=0 ; $i<sizeof($data)-1 ; $i++) {
+                for ($i=1 ; $i<sizeof($data)-1 ; $i++) {
                     echo "<th>$output[$i]</th>";
 //                        echo $output[$i];
                 }
