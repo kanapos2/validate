@@ -85,8 +85,8 @@ if ($_FILES["file"]["type"] != "text/csv") {
                 foreach ($data as $output){
                     $sum += $output[2];
                 }
-                echo $sum/sizeof($data);
-                if ($sum/sizeof($data) >= 3) {
+                echo $sum/(sizeof($data)-1);
+                if ($sum/(sizeof($data)-1) >= 3) {
                     echo "<style> #csstext { color: lightgreen }</style>";
                 }
                 else{
@@ -113,11 +113,14 @@ if ($_FILES["file"]["type"] != "text/csv") {
 
             foreach ($data as $output){
                 echo "<tr>";
-                for ($i=1 ; $i<sizeof($data)-1 ; $i++) {
-                    echo "<th>$output[$i]</th>";
+                if ($output[0] != "ปี") {
+                    for ($i=0 ; $i<sizeof($data)-1 ; $i++) {
+                        echo "<th>$output[$i]</th>";
 //                        echo $output[$i];
+                    }
+                    echo "</tr>";
                 }
-                echo "</tr>";
+
             }
 
             ?>
