@@ -42,7 +42,8 @@ $data = readCSV($csvFile);
 //    echo "<p>";
 //}
 $csvType = $_FILES["file"]["type"];
-if ($csvType != "text/csv" || $csvType != 'text/comma-separated-values' || $csvType != 'application/vnd.ms-excel') {
+$mimes = array('text/comma-separated-values','text/csv','application/vnd.ms-excel');
+if (!in_array($csvType,$mimes)) {
 //    echo "<script type='text/javascript'>";
 //    echo "window.location = 'checking.php'";
 //    echo "</script>";
