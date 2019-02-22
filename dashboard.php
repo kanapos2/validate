@@ -43,9 +43,11 @@ $data = readCSV($csvFile);
 //}
 
 if ($_FILES["file"]["type"] != "text/csv") {
-    echo "<script type='text/javascript'>";
-    echo "window.location = 'checking.php'";
-    echo "</script>";
+//    echo "<script type='text/javascript'>";
+//    echo "window.location = 'checking.php'";
+//    echo "</script>";
+
+    echo $_FILES["file"]["type"];
 
 }
 ?>
@@ -113,7 +115,7 @@ if ($_FILES["file"]["type"] != "text/csv") {
 
             foreach ($data as $output){
                 echo "<tr>";
-                if ($output[0] != "ปี") {
+                if ($output[0] != "Year") {
                     for ($i=0 ; $i<sizeof($data)-1 ; $i++) {
                         echo "<th>$output[$i]</th>";
 //                        echo $output[$i];
