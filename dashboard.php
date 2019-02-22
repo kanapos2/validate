@@ -43,9 +43,11 @@ $data = readCSV($csvFile);
 //}
 $csvType = $_FILES["file"]["type"];
 if ($csvType != "text/csv" || $csvType != 'text/comma-separated-values' || $csvType != 'application/vnd.ms-excel') {
-    echo "<script type='text/javascript'>";
-    echo "window.location = 'checking.php'";
-    echo "</script>";
+//    echo "<script type='text/javascript'>";
+//    echo "window.location = 'checking.php'";
+//    echo "</script>";
+
+    echo $csvType;
 
 
 }
