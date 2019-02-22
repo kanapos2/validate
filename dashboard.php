@@ -44,11 +44,11 @@ $data = readCSV($csvFile);
 $csvType = $_FILES["file"]["type"];
 $mimes = array('text/comma-separated-values','text/csv','application/vnd.ms-excel');
 if (!in_array($csvType,$mimes)) {
-//    echo "<script type='text/javascript'>";
-//    echo "window.location = 'checking.php'";
-//    echo "</script>";
+    echo "<script type='text/javascript'>";
+    echo "window.location = 'checking.php'";
+    echo "</script>";
 
-    echo $csvType;
+//    echo $csvType;
 
 
 }
